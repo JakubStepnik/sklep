@@ -1,0 +1,315 @@
+/* COMPACT CAPTCHA */
+
+.capbox {
+	background-color: #BBBBBB;
+	background-image: linear-gradient(#BBBBBB, #9E9E9E);
+	border: #007bff 0px solid;
+	border-width: 2px 2px 2px 20px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	display: inline-block;
+	padding: 2px 8px 5px 8px;
+	border-radius: 4px 4px 4px 4px;
+	}
+
+.capbox-inner {
+	font: bold 0.8em arial, sans-serif;
+	color: #000000;
+	background-color: #E3E3E3;
+	margin: 0px auto 0px auto;
+	padding: 0.3em 1em 0.3em 1em;
+	border-radius: 4px;
+	display: inline-block;
+	vertical-align: middle;
+	}
+
+#CaptchaDiv {
+	color: #000000;
+	font: normal 1rem Impact, Charcoal, arial, sans-serif;
+	font-style: italic;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	user-select: none;
+	display: inline-block;
+	padding: 3px 14px 3px 8px;
+	margin-right: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaInput {
+	border: #38B000 2px solid;
+	margin: 3px 0px 1px 0px;
+	width: 14vw;
+	}
+/* KONIEC*/
+/*slider */
+#x{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#zdj1 {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  width: 70vw;
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.container-fluid { 
+    padding: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .left{
+    float: left;
+    margin-right:7.7%;
+}
+.right{
+   float: left;
+}
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow:auto;
+    height:100%;
+    background-color:rgba(40, 43, 64, 1)
+}
+  .bg-color1 {
+      background-color:rgba(41, 47, 90, 1);
+      color:white;
+  }
+ .nomargin {
+     margin-right: 0px; 
+     margin-left: 0px; 
+     margin-top: 0px;
+     margin-bottom: 0px;
+}
+.nopadding {
+ padding: 0px;
+}
+.ikona-kanalu {
+  position: relative;
+    width: 1.7vw;
+    height:1.7vw;
+    top:4px;
+}
+.on {
+  width: 9%;
+  height:3.7vw;
+}
+  .center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+  .nadtytul {
+    padding-bottom: 10px;
+    font-size:1.7vw;
+  }
+  .tytul-filmy {
+    position: relative;
+    bottom: 4%;
+    font-size:88.9%;
+    height:20px; 
+    overflow-wrap: break-word; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tytul-kategorie {
+    position: relative;
+    top:-4.3%;
+    height:20px; 
+    overflow-wrap: break-word; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 17px; 
+  }
+  .licznik-widzow {
+    font-size: 100%
+  }
+  .odstep {
+  margin: 5px;
+  display: inline-block;
+  }
+  .button {
+    font-size: 100%;
+    border:0;
+    padding:0;
+    width: 25px;
+
+  }
+  .obserwowani {
+      height: 100%;
+      background-color: rgba(56, 59, 80, 1);
+      width: 10.33%;
+      overflow: hidden;
+  }
+  .chat {
+    height: 100%;
+    background-color: rgba(56, 59, 80, 1);
+    width: 17.71%;
+    right:0px;
+    overflow: hidden;
+}
+.lorem {
+    margin-left: 14.65%;
+    margin-right: 4.5%;
+    color:white;
+  }
+  .lorem-kanaly {
+    margin-left: 14.65%;
+    margin-right: 20.65%;
+    color:white;
+  }
+.napis-obserwowani{
+ margin-top: 22px;
+ margin-left:2%;
+  font-size: 15px;
+  font-family: lato;
+  color:rgba(161, 175, 255, 1);
+  overflow: hidden;
+  }
+
+.max-end{
+    display: flex;
+  }
+.ikonka {
+  height:40px;
+}
+ .search {
+   width: 483px;
+   position: relative;
+   left:10px;
+   top:3px;
+ }
+
+.video-main {
+  display:block;
+   top:15px;
+ }
+.opis-vieo {
+  background-color:#292F5A;
+  margin-top:15px; 
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  font-weight:normal;
+  box-sizing: unset;
+  border-radius: 0%;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  height:300px;
+}
+.maly {
+  position: relative;
+  top:-5%;
+   width:60px;
+}
+.video-kanaly {
+  height:23vw;
+   padding:1%;
+}
+.video-reszta {
+  height:15vw;
+}
+.grane {
+  margin-top:15px; 
+  font-size:15px;
+  color:#A1AFFF;
+  font-weight: bold;
+}
+.wlasny-col-3 {
+  Flex: 0 0 50%;
+  max-width:18%;
+  max-height:100%;
+
+}
+.kategoire {
+  height:22vw;
+  width:13vw;
+  padding: 0;
+
+}
+.nadtytul-przegladaj{
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300))); 
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+.opis-kanal{
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  background-color:#323551;
+  overflow: hidden;
+  border: solid 2px #818CCC;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: auto; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 85, 128, 1) 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(79, 85, 128, 0.4z); 
+}
+/*LG*/
+ @media only screen and (max-width: 991px) {
+  .search{ position: relative; left:21%; width:60%;}
+  .button {left:5%;}
+  .ikonka{position: relative; bottom:34.5px;left:18px;}
+  .licznik-widzow { font-size: 80%}
+  .opis-vieo {overflow-y:scroll;height:250px;}
+}
+/*MD*/
+
+}
+@media (max-width: 768px) { 
+  .ikona-kanalu {width: 2.5vw;height:2.5vw;}
+}
+   @media only screen and (max-width: 700px) {
+    .blok-700{margin-left:5px;}
+    .obserwowani{width:45px;}
+    .napis-obserwowani{display: none;}
+    .nadtytul { font-size:2.5vw;}
+  }
+  @media only screen and (max-width: 600px) {
+    .lorem{margin-left:16.4%}
+    .on {width: 2vw;height:3.7vw;}
+    .ikona-kanalu {width: 2.5vw;height:2.5vw;top:100%;}
+    .odstep {margin: 15px;display: inline-block;}
+  }
+
+  @media only screen and (max-width: 450px) {
+    .search{ position: relative;  width:30%;left:0%;}
+    .nadtytul { font-size:3.9vw;}
+  }
+  @media (max-width: 425px) { 
+    .kategoire { width:15vw; padding: 0;}
+    .licznik-widzow { font-size: 80%}
+    .ikona-kanalu {width: 3.7vw;height:3.7vw;top:0.3vw;}
+    .maly {position: relative; width:50px}
+  }
+  @media only screen and (max-width: 440px) {
+   .ehh{flex-direction: column}
+   .video-main{width: 75%;  margin-left:45px}
+  }
+  .bg-color2 {
+    background: url(top1.png);
+    display: block;margin: auto;
+    max-width: 100%;
+
+  }
+  
