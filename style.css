@@ -251,6 +251,9 @@
   overflow: hidden;
   border: solid 2px #818CCC;
 }
+.lato {
+  font-family: "lato",sans-serif;
+}
 /* Track */
 ::-webkit-scrollbar-track {
   background: auto; 

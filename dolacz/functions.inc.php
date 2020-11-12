@@ -98,7 +98,7 @@ function createUser($conn,$username,$email,$pwd)  {
             session_start();
             $_SESSION["userid"]=$uidExists["usersId"];
             $_SESSION["useruid"]=$uidExists["usersUid"];
-            header("location: ../logowanie.php?error=dziala");
+            header("Location: ../index.php");
             exit();
     }
 }
