@@ -1,5 +1,6 @@
 <?php include_once "head.php"; 
-include_once "nav.php";?>
+include_once "nav.php";
+?>
          
           <!--BODY-->
           <div style="margin-top:45.5px;" >
@@ -282,13 +283,8 @@ include_once "nav.php";?>
 </div>
 </div>
  </div>
-<script src="jquery.js"></script>
-  
-  
-
- 
-     
-            <script src="bootstrap.bundle.min.js"></script>
+<script src="bootstrap/jquery.js"></script>
+<script src="bootstrap/bootstrap.bundle.min.js"></script>
         </body>
     
 </html>

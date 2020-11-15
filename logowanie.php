@@ -144,22 +144,19 @@ include_once "nav.php";
               if($_GET["error"]=="emptyInputSignup"){
                 echo "<span style='color:pink' <p> Chyba kolego czegoś nie wypełniłeś</p></span>";
               }
-              else if($_GET["error"]=="invailidUid"){
+              else if($_GET["error"]=="invalidUid"){
                 echo "<p>Złe dane użytkownika</p>";
               }
-              else if($_GET["error"]=="invailidEmail"){
+              else if($_GET["error"]=="invalidEmail"){
                 echo "<p>nie poprawny email</p>";
               }
-              else if($_GET["error"]=="pwdMatch"){
+              else if($_GET["error"]=="passnotmach"){
                 echo "<p>hasło nie są identyczne!</p>";
               }
-              else if($_GET["error"]=="uidExists"){
+              else if($_GET["error"]=="usernametaken"){
                 echo "<p>nick lub taki email już istnieje!</p>";
               }
-              else if($_GET["error"]=="uidExists"){
-                echo "<p>oj cos poszło nie ta, spróbuj jeszcze raz</p>";
-              }
-              else if($_GET["error"]=="uidExists"){
+              else if($_GET["error"]=="stmtfailed"){
                 echo "<p>oj cos poszło nie ta, spróbuj jeszcze raz</p>";
               }
               else if($_GET["error"]=="none"){
@@ -174,8 +171,8 @@ include_once "nav.php";
 </div>
 </div>
  </div>
-<script src="jquery.js"></script>
-            <script src="bootstrap.bundle.min.js"></script>
+<script src="bootstrap/jquery.js"></script>
+            <script src="bootstrap/bootstrap.bundle.min.js"></script>
            
         </body>
     </head>

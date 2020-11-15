@@ -41,7 +41,7 @@ function uidExists($conn,$username,$email)  {
 $sql = "SELECT * FROM users where usersUid = ? OR usersEmail = ?;";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt,$sql)){
-    header("location: ../logowanie.php?error=stmtfailed1");
+    header("location: ../logowanie.php?error=stmtfailed");
     exit();
 }
 mysqli_stmt_bind_param($stmt,"ss",$username,$email);
@@ -58,10 +58,10 @@ mysqli_stmt_close($stmt);
 }
 function createUser($conn,$username,$email,$pwd)  {
 
-    $sql = "INSERT INTO users(usersEmail,usersUid,usersPwd) VALUES (?,?,?);";
+    $sql = "INSERT INTO users(usersUid,usersEmail,usersPwd) VALUES (?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
-        header("location: ../logowanie.php?error=stmtfailed2");
+        header("location: ../logowanie.php?error=stmtfailed");
         exit();
     }
     $hashedPwd=password_hash($pwd,PASSWORD_DEFAULT);
