@@ -50,13 +50,20 @@
           <a class="dropdown-item lato" href="ustawienia.php" style="font-size:16px; color:white;margin-left:2px;background-color:#292F5A;">Ustawienia</a>
           <a class="dropdown-item lato" href="dolacz/wyloguj.inc.php" style="font-size:16px; color:white;margin-left:2px; background-color:#292F5A;">Wyloguj</a>
           </div>';
-          } else { echo '
+          } else if(isset($_SESSION["perm"])){echo'
+        <div class="dropdown-menu"  aria-labelledby="navbarDropdown" style="left:-100%; background-color:#292F5A ;">
+          <a class="dropdown-item lato" href="ustawienia.php" style="font-size:16px; color:white;margin-left:2px;background-color:#292F5A;">Ustawienia</a>
+          <a class="dropdown-item lato" href="dolacz/wyloguj.inc.php" style="font-size:16px; color:white;margin-left:2px; background-color:#292F5A;">Wyloguj</a>
+          </div>';
+          }else { echo '
             <div class="dropdown-menu"  aria-labelledby="navbarDropdown" style="left:-100%; background-color:#292F5A ;">
             <a class="dropdown-item lato" href="logowanie.php" style="font-size:16px; color:white;margin-left:2px; background-color:#292F5A;">Logowanie</a>
             <a class="dropdown-item lato" href="logowanie.php" style="font-size:16px; color:white;;margin-left:2px; background-color:#292F5A;">Rejestracja</a>
             </div>';
           }
+          
           ?>
+          
           <!-- </li> --->
                   </div>
                   </div>

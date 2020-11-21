@@ -82,16 +82,56 @@ function createUser($conn,$username,$email,$pwd)  {
         }
         return $result;
     }
+    function uidExistsM($conn,$username){
+        $sql = "SELECT * FROM mods where modlogin = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt,$sql)){
+            header("location: ../logowanie.php?error=stmtfailed");
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt,"s",$username);
+        mysqli_stmt_execute($stmt);
+        $resultData=mysqli_stmt_get_result($stmt);
+        if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+         
+        }else {
+        $result = false;
+        return $result;
+        }
+        mysqli_stmt_close($stmt);
+        }
+
+
+
+
     function loginUser($conn,$username,$pwd)  {
         $uidExists=uidExists($conn,$username,$username);
-
-        if($uidExists===false){
+        $uidExistsM=uidExistsM($conn,$username);
+        if($uidExists===false && $uidExistsM===false){
             header("location: ../logowanie.php?error=wronglogin");
             exit();
+            
+        }
+            
+        if(!$uidExistsM===false){
+            $pwdHashedM = $uidExistsM["modpwd"];
+            $checkPwdM = password_verify($pwd, $pwdHashedM);
+            if($checkPwdM === false){
+                header("location: ../logowanie.php?error=wrongpassowrd");
+                exit();
+            }else if($checkPwdM === true){
+                session_start();
+                $_SESSION["id_mod"]=$uidExistsM["id_mod"];
+                $_SESSION["modlogin"]=$uidExistsM["modlogin"];
+                $_SESSION["perm"]=$uidExistsM["perm"];
+                header("Location: ../index.php");
+                exit();
+        }
         }
         $pwdHashed = $uidExists["usersPwd"];
         $checkPwd = password_verify($pwd, $pwdHashed);
-        if($checkPwd === false){
+        if( $checkPwd === false){
             header("location: ../logowanie.php?error=wrongpassowrd");
             exit();
         }else if($checkPwd === true){

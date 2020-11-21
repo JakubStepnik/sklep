@@ -9,7 +9,8 @@ if(isset($_POST["login_submit"])){
         exit();
     }
     loginUser($conn,$username,$pwd);
-} else {
+
+}else {
     header("location: ../logowanie.php?error=niedziala");
 }
-?>
+?>!
