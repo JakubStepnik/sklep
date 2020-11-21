@@ -1,7 +1,7 @@
 <?php 
-include_once "nav/head.php";
+include_once "head.php";
 echo "</head>";
-include_once "nav/nav.php";
+include_once "nav.php";
 ?>
           <!--BODY-->
           <div style="margin-top:45.5px;" >
@@ -73,8 +73,8 @@ include_once "nav/nav.php";
                         <div class="row text-white">
                             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                                 <h4 class="display-12 py-2 text-center " >MOJE DANE</h4>
-                                       <a href="edycja/edycja_produkty"> <button class="btn btn-primary btn-lg">Produkty</button> </a>
-                                       <a href="edycja/edycja_pracownika"> <button class="btn btn-primary btn-lg">Pracownik</button> </a>
+                                       <a href="edycja_produkty.php"> <button class="btn btn-primary btn-lg">Produkty</button> </a>
+                                       <a href="edycja_pracownika.php"> <button class="btn btn-primary btn-lg">Pracownik</button> </a>
                             </div>
                         </div>
                     </div>

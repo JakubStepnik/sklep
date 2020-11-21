@@ -1,5 +1,6 @@
-<?php include_once "nav/head.php"; 
-include_once "nav/nav.php";?>
+<?php include_once "head.php"; 
+echo '</head>';
+include_once "nav.php";?>
          
           <!--BODY-->
           <div style="margin-top:45.5px;" >

@@ -8,6 +8,15 @@ function emptyInputSignup($username,$email,$pwd,$pwdrepeat) {
     }
     return $result;
 }
+function emptyInputSignupM($username,$email,$pwd,$pwdrepeat) {
+    $result;
+    if(empty($username) || empty($email) || empty($pwd) || empty($pwdrepeat)){
+    $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+}
 function invailidUid($username) {
     $result;
     if(preg_match("/^[a-zA-Z0-9]*&/",$username)){
@@ -17,6 +26,16 @@ function invailidUid($username) {
     }
     return $result;
 }
+function invailiLoginM($username) {
+    $result;
+    if(preg_match("/^[a-zA-Z0-9]*&/",$username)){
+    $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+}
+
 function invailidEmail($email) {
     $result;
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
@@ -73,6 +92,24 @@ function createUser($conn,$username,$email,$pwd)  {
     header("location: ../logowanie.php?error=none");
     exit();
     }
+  
+    function createMod($conn,$username,$email,$pwd)  {
+
+        $sql = "INSERT INTO mods(modlogin,modemail,modpwd) VALUES (?,?,?);";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt,$sql)){
+            header("location: ../logowanie.php?error=stmtfailed");
+            exit();
+        }
+        $hashedPwd=password_hash($pwd,PASSWORD_DEFAULT);
+    
+        mysqli_stmt_bind_param($stmt,"sss",$username,$email,$hashedPwd);
+        mysqli_stmt_execute($stmt);
+        
+        mysqli_stmt_close($stmt);
+        header("location: ../logowanie.php?error=none");
+        exit();
+        }
     function emptyInputLogin($username,$pwd) {
         $result;
         if(empty($username) || empty($pwd)){
@@ -125,7 +162,7 @@ function createUser($conn,$username,$email,$pwd)  {
                 $_SESSION["id_mod"]=$uidExistsM["id_mod"];
                 $_SESSION["modlogin"]=$uidExistsM["modlogin"];
                 $_SESSION["perm"]=$uidExistsM["perm"];
-                header("Location: ../index.php");
+                header("Location: ../logowanie.php?error=".$_SESSION['modlogin']."");
                 exit();
         }
         }
