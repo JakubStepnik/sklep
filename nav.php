@@ -15,7 +15,7 @@
                     <a class="nav-link " href="kanal.html"style="font-size:16px;  color:white; font-family: 'Lato', sans-serif;margin-left:2px">STREAM<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item order-lg-2 order-3">
-                    <a class="nav-link" href="przeglądaj.html" style="font-size:16px; color:white; font-family: 'Lato', sans-serif;margin-left:2px"> PRZEGLĄDAJ</a>
+                    <a class="nav-link" href="produkty.php" style="font-size:16px; color:white; font-family: 'Lato', sans-serif;margin-left:2px"> PRODUKTY</a>
                   </li>
                   <li class="nav-item order-lg-3 order-4">
                     <a class="nav-link" href="kategorie.html" style="font-size:16px; color:white; font-family: 'Lato', sans-serif;margin-left:2px">KATEGORIE</a>

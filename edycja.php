@@ -1,5 +1,6 @@
 <?php 
- include_once "head.php";
+include_once "head.php";
+echo "</head>";
 include_once "nav.php";
 ?>
           <!--BODY-->

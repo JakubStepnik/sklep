@@ -1,5 +1,6 @@
 <?php 
  include_once "head.php";
+ echo '</head>';
 if(isset($_SESSION["useruid"])){
   header("Location: index.php");
   exit();

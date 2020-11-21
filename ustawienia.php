@@ -1,5 +1,6 @@
 <?php 
  include_once "head.php";
+ echo '</head>';
 include_once "nav.php";
 require_once 'dolacz/db.inc.php';
 ?>
@@ -75,7 +76,7 @@ require_once 'dolacz/db.inc.php';
                             <h4 class="w-100 text-center">MOJE DANE</h4>
                             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 p-4">
                              <?php 
-                                $sql = "SELECT * FROM `users` WHERE usersId='".$_SESSION["userid"]."'";
+                                $sql = "SELECT * FROM `users` WHERE usersId='".$_SESSION['userid']."';";
                                 $result=mysqli_query($conn,$sql);
                                 while($row=mysqli_fetch_assoc($result)){
                                 echo
