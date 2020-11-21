@@ -48,14 +48,14 @@
           if(isset($_SESSION["perm"])){
             $sql="Select*from mods";
             $result=mysqli_query($conn,$sql);$row=mysqli_fetch_assoc($result); 
-            if($row["perm"]==0){
+            if($row["perm"]==1){
               echo '
         <div class="dropdown-menu"  aria-labelledby="navbarDropdown" style="left:-100%; background-color:#292F5A ;">
           <a class="dropdown-item lato" href="panel_adm.php" style="font-size:16px; color:white;margin-left:2px;background-color:#292F5A; font-algin:center">Panel admina</a>
           <a class="dropdown-item lato" href="dolacz/wyloguj.inc.php" style="font-size:16px; color:white;margin-left:2px; background-color:#292F5A;">Wyloguj</a>
           </div>';
           }
-          else if($row["perm"]==1){
+          else if($row["perm"]==2){
             echo '
       <div class="dropdown-menu"  aria-labelledby="navbarDropdown" style="left:-100%; background-color:#292F5A ;">
         <a class="dropdown-item lato" href="panel_adm.php" style="font-size:16px; color:white;margin-left:2px;background-color:#292F5A; font-algin:center">Panel pracownika</a>

@@ -1,7 +1,7 @@
 <?php 
- include_once "head.php";
+ include_once "nav/head.php";
  echo '</head>';
-include_once "nav.php";
+include_once "nav/nav.php";
 require_once 'dolacz/db.inc.php';
 ?>
          
