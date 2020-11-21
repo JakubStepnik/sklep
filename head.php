@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once 'dolacz/db.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
