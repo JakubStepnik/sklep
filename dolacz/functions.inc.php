@@ -8,9 +8,9 @@ function emptyInputSignup($username,$email,$pwd,$pwdrepeat) {
     }
     return $result;
 }
-function emptyInputSignupM($username,$email,$pwd,$pwdrepeat) {
+function emptyInputSignupM($username,$email,$pwd,$pwdrepeat,$imie,$nazwisko,$NT,$perm) {
     $result;
-    if(empty($username) || empty($email) || empty($pwd) || empty($pwdrepeat)){
+    if(empty($username) || empty($email) || empty($pwd) || empty($pwdrepeat) || empty($imie) || empty($nazwisko) ||  empty($NT)  ||  empty($perm)  ){
     $result = true;
     } else {
         $result = false;
@@ -93,9 +93,9 @@ function createUser($conn,$username,$email,$pwd)  {
     exit();
     }
   
-    function createMod($conn,$username,$email,$pwd)  {
+    function createMod($conn,$username,$email,$pwd,$imie,$nazwisko,$NT,$perm)  {
 
-        $sql = "INSERT INTO mods(modlogin,modemail,modpwd) VALUES (?,?,?);";
+        $sql = "INSERT INTO mods(modlogin,modemail,modpwd,perm,imie,nazwisko,numertelefonu) VALUES (?,?,?,?,?,?,?);";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
             header("location: ../logowanie.php?error=stmtfailed");
@@ -103,7 +103,7 @@ function createUser($conn,$username,$email,$pwd)  {
         }
         $hashedPwd=password_hash($pwd,PASSWORD_DEFAULT);
     
-        mysqli_stmt_bind_param($stmt,"sss",$username,$email,$hashedPwd);
+        mysqli_stmt_bind_param($stmt,"sssssss",$username,$email,$hashedPwd,$imie,$nazwisko,$NT,$perm);
         mysqli_stmt_execute($stmt);
         
         mysqli_stmt_close($stmt);
@@ -162,12 +162,12 @@ function createUser($conn,$username,$email,$pwd)  {
                 $_SESSION["id_mod"]=$uidExistsM["id_mod"];
                 $_SESSION["modlogin"]=$uidExistsM["modlogin"];
                 $_SESSION["perm"]=$uidExistsM["perm"];
-                header("Location: ../logowanie.php?error=".$_SESSION['modlogin']."");
+                header("Location: ../panel_adm.php");
                 exit();
         }
         }
         $pwdHashed = $uidExists["usersPwd"];
-        $checkPwd = password_verify($pwd, $pwdHashed);
+        $checkPwd = password_verify($pwd,$pwdHashed);
         if( $checkPwd === false){
             header("location: ../logowanie.php?error=wrongpassowrd");
             exit();

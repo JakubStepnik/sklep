@@ -1,43 +1,59 @@
-<?php 
+
+<?php
 if(isset($_POST["edycja_submit"])){
-$username = "szef";
-$email = "szef@gmail.com";
-$pwd = "szef";
-$pwdrepeat = "szef";
-$imie = $_POST["imie"];
-$nazwisko = $_POST["nazwisko"];
-$NT=$_POST["nt"];
-$perm= $_POST["perm"];
-require_once 'db.inc.php';
-require_once 'functions.inc.php ';
-if(emptyInputSignupM($username,$email,$pwd,$pwdrepeat) !== false){
-header("location: ../logowanie.php?error=emptyInputSignup");
-exit();
-}
-    if(invailiLoginM($username) !== false){
-        header("location: ../logowanie.php?error=invalidUid");
-        exit();
-     }
-    if(invailidEmail($email) !== false){
-        header("location: ../logowanie.php?error=invalidEmail");
-        exit();
-    }
+    $username = $_POST["login"];
+    $email = $_POST["email"];
+    $pwd = $_POST["pwd"];
+    $imie = $_POST["imie"];
+    $nazwisko = $_POST["nazwisko"];
+    $NT=$_POST["nt"];
+    $perm= $_POST["perm"];
+    $id_mod=$_POST["id_mod"];
+    require_once 'db.inc.php';
+    if(isset($_SESSION["useruid"])){
+        $usersUid=$_SESSION["useruid"];
+       }
+        if(!empty($username)){
+            $sql="UPDATE `mods` SET `modlogin`='".$username."' where  `id_mod`='".$id_mod."' ";
+            
+            $result=mysqli_query($conn,$sql);
+        }
+        if(!empty($email)){
+            $sql="UPDATE `mods` SET `modemail`='".$email."' where  `id_mod`='".$id_mod."' ";
+            $result=mysqli_query($conn,$sql);
+        }
+        if(!empty($pwd) && ){
+            $sql="UPDATE `mods` SET `modlogin`='".$username."' where  `id_mod`='".$id_mod."' ";
+            
+            $result=mysqli_query($conn,$sql);
+        }
         
-    if(pwdMatch($pwd,$pwdrepeat) !== false){
-        header("location: ../logowanie.php?error=passnotmach");
-        exit();
-    }
-  
-    if(uidExistsM($conn,$username,$email) !== false){
-        header("location: ../logowanie.php?error=usernametaken");
-        exit();
-    }
-    createMod($conn,$username,$email,$pwd,$imie,$nazwisko,$NT,$perm);
-}
+        if(!empty($NT)){
+            $sql="UPDATE `mods` SET `modlogin`='".$username."' where  `id_mod`='".$id_mod."' ";
+            
+            $result=mysqli_query($conn,$sql);
+        }
+        if(!empty($Adres)){
+            $sql="UPDATE `mods` SET `modlogin`='".$username."' where  `id_mod`='".$id_mod."' ";
+            
+            $result=mysqli_query($conn,$sql);
+        }
+        if(!empty($Miasto)){
+            $sql="UPDATE `mods` SET `modlogin`='".$username."' where  `id_mod`='".$id_mod."' ";
+            
+            $result=mysqli_query($conn,$sql);
+        }
+        if(!empty($KP)){
+            $sql="UPDATE `mods` SET `modlogin`='".$username."' where  `id_mod`='".$id_mod."' ";            
+            $result=mysqli_query($conn,$sql);
+        }
 
-else {
-    header("location:../logowanie.php");
-    exit();
+    if($result){
+        header("location: ../edycja_pracownika.php?error=none");
+    }
+    else {
+        header("location: ../edycja_pracownika.php?error=notchange");
+    }
+    mysqli_close($conn);
 }
-
-?>
+   ?>

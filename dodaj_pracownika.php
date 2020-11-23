@@ -72,12 +72,9 @@ include_once "nav.php";
                     <div class="container">
                         <div class="row text-white">
                             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-                                <h4 class="display-12 py-2 text-center " >Edycja pracownika</h4>
-                                 podaj id_mod aby zmienić tego pracownika <?php echo $_SESSION['modlogin'] ?>
-                                <form action="dolacz/ep.inc.php" class="justify-content-center" method="post">
-                                            <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="id_mod" name="id_mod">
-                                        </div>
+                                <h4 class="display-12 py-2 text-center " >Dodaj pracownika</h4>
+                              
+                                    <form action="dolacz/dp.inc.php" class="justify-content-center" method="post">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Login" name="login">
                                         </div>
@@ -85,10 +82,10 @@ include_once "nav.php";
                                             <input type="text" class="form-control" placeholder="email" name="email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="old_pwd" name="oldpwd">
+                                            <input type="password" class="form-control" placeholder="pwd" name="pwd">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="new_pwd" name="newpwd">
+                                            <input type="password" class="form-control" placeholder="pwdrepeat" name="pwdrepeat">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Imie" name="imie">
@@ -102,7 +99,7 @@ include_once "nav.php";
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="number_perm" name="perm">
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-lg" name="edycja_submit">Zapisz</button>
+                                        <button type="submit" class="btn btn-primary btn-lg" name="dodaj_submit">Zapisz</button>
                                     </form>
                                     <?php 
                                     if(isset($_GET["error"])){
@@ -111,6 +108,18 @@ include_once "nav.php";
                                       }
                                       else if($_GET["error"]=="notchange"){
                                         echo "<span style='color:pink' <p>Niczego nie zmieniono!</p></span>";
+                                      }
+                                      else if($_GET["error"]=="invalidUid"){
+                                        echo "<span style='color:pink' <p>login się nie zgadza</p></span>";
+                                      }
+                                      else if($_GET["error"]=="invalidEmail"){
+                                        echo "<span style='color:pink' <p>zły email!</p></span>";
+                                      }
+                                      else if($_GET["error"]=="passnotmach"){
+                                        echo "<span style='color:pink' <p>Hasło jest zajęte</p></span>";
+                                      }
+                                      else if($_GET["error"]=="usernametaken"){
+                                        echo "<span style='color:pink' <p>już taki nick jest zajęty</p></span>";
                                       }
                                     }
                                     ?>

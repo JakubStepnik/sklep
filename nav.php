@@ -49,21 +49,21 @@
             $sql="Select*from mods where perm={$_SESSION["perm"]}";
             $result=mysqli_query($conn,$sql);$row=mysqli_fetch_assoc($result); 
             if($row["perm"]==1){
-              echo $row["modlogin"].'
+              echo '
         <div class="dropdown-menu"  aria-labelledby="navbarDropdown" style="left:-100%; background-color:#292F5A ;">
           <a class="dropdown-item lato" href="panel_adm.php" style="font-size:16px; color:white;margin-left:2px;background-color:#292F5A; font-algin:center">Panel admina</a>
           <a class="dropdown-item lato" href="dolacz/wyloguj.inc.php" style="font-size:16px; color:white;margin-left:2px; background-color:#292F5A;">Wyloguj</a>
           </div>';
           }
           else if($row["perm"]==2){
-            echo  $row["modlogin"].'
+            echo  '
       <div class="dropdown-menu"  aria-labelledby="navbarDropdown" style="left:-100%; background-color:#292F5A ;">
         <a class="dropdown-item lato" href="panel_adm.php" style="font-size:16px; color:white;margin-left:2px;background-color:#292F5A; font-algin:center">Panel pracownika</a>
         <a class="dropdown-item lato" href="dolacz/wyloguj.inc.php" style="font-size:16px; color:white;margin-left:2px; background-color:#292F5A;">Wyloguj</a>
         </div>';
         }
       } else if(isset($_SESSION["useruid"])){
-          echo $_SESSION["useruid"].'
+          echo '
         <div class="dropdown-menu"  aria-labelledby="navbarDropdown" style="left:-100%; background-color:#292F5A ;">
           <a class="dropdown-item lato" href="ustawienia.php" style="font-size:16px; color:white;margin-left:2px;background-color:#292F5A;">Ustawienia</a>
           <a class="dropdown-item lato" href="dolacz/wyloguj.inc.php" style="font-size:16px; color:white;margin-left:2px; background-color:#292F5A;">Wyloguj</a>
