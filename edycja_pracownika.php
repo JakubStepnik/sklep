@@ -73,7 +73,8 @@ include_once "nav.php";
                         <div class="row text-white">
                             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                                 <h4 class="display-12 py-2 text-center " >Edycja pracownika</h4>
-                                 podaj id_mod aby zmienić tego pracownika <?php echo $_SESSION['modlogin'] ?>
+                                 podaj id_mod aby zmienić tego pracownika 
+
                                 <form action="dolacz/ep.inc.php" class="justify-content-center" method="post">
                                             <div class="form-group">
                                             <input type="text" class="form-control" placeholder="id_mod" name="id_mod">
@@ -102,6 +103,7 @@ include_once "nav.php";
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="number_perm" name="perm">
                                         </div>
+
                                         <button type="submit" class="btn btn-primary btn-lg" name="edycja_submit">Zapisz</button>
                                     </form>
                                     <?php 
@@ -111,6 +113,9 @@ include_once "nav.php";
                                       }
                                       else if($_GET["error"]=="notchange"){
                                         echo "<span style='color:pink' <p>Niczego nie zmieniono!</p></span>";
+                                      }
+                                      else if($_GET["error"]=="passnot"){
+                                        echo "<span style='color:pink' <p>Stare hasło się nie zgadza!</p></span>";
                                       }
                                     }
                                     ?>
