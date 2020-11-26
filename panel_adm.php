@@ -73,9 +73,19 @@ include_once "nav.php";
                         <div class="row text-white">
                             <div class="col-xl-12 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                                 <h4 class="display-12 text-center " >Panel administracyjny</h4>
-                                       <a href="edycja_produkty.php"> <button class="btn btn-primary btn-lg">Produkty</button> </a>
-                                       <a href="dodaj_pracownika.php"> <button class="btn btn-primary btn-lg"> Dodaj pracownika</button> </a>
-                                       <a href="edycja_pracownika.php"> <button class="btn btn-primary btn-lg"> Edytuj pracownika</button> </a>
+                                <h4 class="display-12 text-center " >Produkt</h4>
+                                       <a href="edycja_produkty.php"> <button class="btn btn-primary btn-lg">Dodaj</button> </a>
+                                       <a href="dodaj_pracownika.php"> <button class="btn btn-primary btn-lg"> Edytuj</button> </a>
+                                       <a href="edycja_pracownika.php"> <button class="btn btn-primary btn-lg"> Usuń</button> </a>
+                                       
+                            </div>
+                        </div>
+                        <div class="row text-white">
+                            <div class="col-xl-12 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                                <h4 class="display-12 text-center " >Pracownik</h4>
+                                       <a href="dodaj_pracownika.php"> <button class="btn btn-primary btn-lg">Dodaj</button> </a>
+                                       <a href="dodaj_pracownika.php"> <button class="btn btn-primary btn-lg"> Edytuj</button> </a>
+                                       <a href="usun_pracownika.php"> <button class="btn btn-primary btn-lg"> Usuń</button> </a>
                                        
                             </div>
                         </div>
