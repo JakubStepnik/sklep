@@ -73,6 +73,9 @@ include_once "nav.php";
                         <div class="row text-white">
                             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                                 <h4 class="display-12 py-2 text-center " >Dodaj Produkt</h4>
+                                <form action="dolacz/image.inc.php" class="justify-content-center" method="post" enctype="multipart/from-data">
+                                <input type="" name="">
+                                </form>
                                     <form action="dolacz/ds.inc.php" class="justify-content-center" method="post">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Nazwa" name="nazwa">
@@ -94,22 +97,16 @@ include_once "nav.php";
                                     <?php 
                                     if(isset($_GET["error"])){
                                       if($_GET["error"]=="none"){
-                                        echo "<zspan style='color:pink' <p>Zmiany zostały zapisane</p></span>";
+                                        echo "<zspan style='color:pink' <p>Dodano nowy produkt</p></span>";
                                       }
-                                      else if($_GET["error"]=="notchange"){
-                                        echo "<span style='color:pink' <p>Niczego nie zmieniono!</p></span>";
+                                      else if($_GET["error"]=="emptyInput"){
+                                        echo "<span style='color:pink' <p>Czegoś nie wypełniono</p></span>";
                                       }
-                                      else if($_GET["error"]=="invalidUid"){
-                                        echo "<span style='color:pink' <p>login się nie zgadza</p></span>";
+                                      else if($_GET["error"]=="invalidCategory"){
+                                        echo "<span style='color:pink' <p>brak kategori!</p></span>";
                                       }
-                                      else if($_GET["error"]=="invalidEmail"){
-                                        echo "<span style='color:pink' <p>zły email!</p></span>";
-                                      }
-                                      else if($_GET["error"]=="passnotmach"){
-                                        echo "<span style='color:pink' <p>Hasło jest zajęte</p></span>";
-                                      }
-                                      else if($_GET["error"]=="usernametaken"){
-                                        echo "<span style='color:pink' <p>już taki nick jest zajęty</p></span>";
+                                      else if($_GET["error"]=="invalidBrand"){
+                                        echo "<span style='color:pink' <p>brak marki</p></span>";
                                       }
                                     }
                                     ?>

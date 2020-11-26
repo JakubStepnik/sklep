@@ -24,7 +24,7 @@ if(invailidCategory($conn,$kategoria) == false){
 }
 
 else {
-    header("location:../dodaj_produkt.php");
+    header("location:../dodaj_produkt.php?error=none");
     exit();
 }
 ?>

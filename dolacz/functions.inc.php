@@ -248,7 +248,7 @@ function invailidCategory($conn,$kategoria){
             mysqli_stmt_execute($stmt);
             
             mysqli_stmt_close($stmt);
-            header("location: ../logowanie.php?error=none");
+            header("location: ../dodaj_produkt.php?error=none");
             exit();
             }
     ?>
