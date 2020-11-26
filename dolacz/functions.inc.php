@@ -17,6 +17,15 @@ function emptyInputSignupM($username,$email,$pwd,$pwdrepeat,$imie,$nazwisko,$NT,
     }
     return $result;
 }
+function emptyInputStuff($nazwa,$kategoria,$marka,$ilosc,$cena) {
+    $result;
+    if(empty($nazwa) || empty($kategoria) || empty($marka) || empty($ilosc) || empty($cena)){
+    $result = true;
+    } else {
+        $result = false;
+    }
+    return $result;
+}
 function invailidUid($username) {
     $result;
     if(preg_match("/^[a-zA-Z0-9]*&/",$username)){
@@ -179,4 +188,67 @@ function createUser($conn,$username,$email,$pwd)  {
             exit();
     }
 }
+
+function invailidCategory($conn,$kategoria){
+    $sql = "SELECT * FROM categories where name = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../dodaj_produkt.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$kategoria);
+    mysqli_stmt_execute($stmt);
+    $resultData=mysqli_stmt_get_result($stmt);
+    if($row = mysqli_fetch_assoc($resultData)){
+    return $row;
+     
+    }else {
+    $result = false;
+    return $result;
+    }
+    mysqli_stmt_close($stmt);
+    }
+
+    function invailidBrand($conn,$marka){
+        $sql = "SELECT * FROM brands where bname = ?;";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt,$sql)){
+            header("location: ../dodaj_produkt.php?error=z");
+            exit();
+        }
+        mysqli_stmt_bind_param($stmt,"s",$marka);
+        mysqli_stmt_execute($stmt);
+        $resultData=mysqli_stmt_get_result($stmt);
+        if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+         
+        }else {
+        $result = false;
+        return $result;
+        }
+        mysqli_stmt_close($stmt);
+        }
+        function  createStuff($conn,$nazwa,$kategoria,$marka,$ilosc,$cena)  {
+            $sql_idcategory="select * from categories where name='".$kategoria."'";
+            $query_idcategory=mysqli_query($conn,$sql_idcategory);
+            $row_idcategory=mysqli_fetch_assoc($query_idcategory);
+            $idcategory=$row_idcategory["idcategory"];
+            $sql_idbrand="select * from brands where bname='".$marka."'";
+            $query_idbrand=mysqli_query($conn,$sql_idbrand);
+            $row_idbrand=mysqli_fetch_assoc($query_idbrand);
+            $idbrand=$row_idbrand["idbrand"];
+            $sql = "INSERT INTO stuff(name,id_category,id_brand,quantity,price) VALUES (?,?,?,?,?);";
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                header("location: ../dodaj_produkt.php?error=f");
+                exit();
+            }
+        
+            mysqli_stmt_bind_param($stmt,"sssss",$nazwa,$idcategory,$idbrand,$ilosc,$cena);
+            mysqli_stmt_execute($stmt);
+            
+            mysqli_stmt_close($stmt);
+            header("location: ../logowanie.php?error=none");
+            exit();
+            }
     ?>
