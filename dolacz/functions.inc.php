@@ -228,7 +228,7 @@ function invailidCategory($conn,$kategoria){
         }
         mysqli_stmt_close($stmt);
         }
-        function  createStuff($conn,$nazwa,$kategoria,$marka,$ilosc,$cena)  {
+        function  createStuff($conn,$nazwa,$kategoria,$marka,$ilosc,$cena,$fileNameNew)  {
             $sql_idcategory="select * from categories where name='".$kategoria."'";
             $query_idcategory=mysqli_query($conn,$sql_idcategory);
             $row_idcategory=mysqli_fetch_assoc($query_idcategory);
@@ -237,14 +237,14 @@ function invailidCategory($conn,$kategoria){
             $query_idbrand=mysqli_query($conn,$sql_idbrand);
             $row_idbrand=mysqli_fetch_assoc($query_idbrand);
             $idbrand=$row_idbrand["idbrand"];
-            $sql = "INSERT INTO stuff(name,id_category,id_brand,quantity,price) VALUES (?,?,?,?,?);";
+            $sql = "INSERT INTO stuff(name,id_category,id_brand,quantity,price,src_img) VALUES (?,?,?,?,?,?);";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("location: ../dodaj_produkt.php?error=f");
                 exit();
             }
         
-            mysqli_stmt_bind_param($stmt,"sssss",$nazwa,$idcategory,$idbrand,$ilosc,$cena);
+            mysqli_stmt_bind_param($stmt,"ssssss",$nazwa,$idcategory,$idbrand,$ilosc,$cena,$fileNameNew);
             mysqli_stmt_execute($stmt);
             
             mysqli_stmt_close($stmt);

@@ -73,10 +73,7 @@ include_once "nav.php";
                         <div class="row text-white">
                             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                                 <h4 class="display-12 py-2 text-center " >Dodaj Produkt</h4>
-                                <form action="dolacz/image.inc.php" class="justify-content-center" method="post" enctype="multipart/from-data">
-                                <input type="" name="">
-                                </form>
-                                    <form action="dolacz/ds.inc.php" class="justify-content-center" method="post">
+                                    <form action="dolacz/ds.inc.php" class="justify-content-center" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Nazwa" name="nazwa">
                                         </div>
@@ -92,6 +89,7 @@ include_once "nav.php";
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Cena" name="cena">
                                         </div>
+                                            <input type="file"  name="file">
                                         <button type="submit" class="btn btn-primary btn-lg" name="dodaj_submit">Zapisz</button>
                                     </form>
                                     <?php 
@@ -107,6 +105,15 @@ include_once "nav.php";
                                       }
                                       else if($_GET["error"]=="invalidBrand"){
                                         echo "<span style='color:pink' <p>brak marki</p></span>";
+                                      }
+                                      else if($_GET["error"]=="toobig"){
+                                        echo "<span style='color:pink' <p>Twój plik jest za duży!</p></span>";
+                                      }
+                                      else if($_GET["error"]=="wrongimg"){
+                                        echo "<span style='color:pink' <p>Coś poszło nie tak, spróbuj jeszcz raz!</p></span>";
+                                      }
+                                      else if($_GET["error"]=="wrongimgtype"){
+                                        echo "<span style='color:pink' <p>Nie możesz przesłać takiego typu pliku!</p></span>";
                                       }
                                     }
                                     ?>
