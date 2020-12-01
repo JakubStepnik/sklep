@@ -75,7 +75,7 @@ include_once "nav.php";
                                 <h4 class="display-12 text-center " >Panel administracyjny</h4>
                                 <h4 class="display-12 text-center " >Produkt</h4>
                                        <a href="dodaj_produkt.php"> <button class="btn btn-primary btn-lg">Dodaj</button> </a>
-                                       <a href="dodaj_pracownika.php"> <button class="btn btn-primary btn-lg"> Edytuj</button> </a>
+                                       <a href="edytuj_produkt.php"> <button class="btn btn-primary btn-lg"> Edytuj</button> </a>
                                        <a href="edycja_pracownika.php"> <button class="btn btn-primary btn-lg"> Usuń</button> </a>
                                        
                             </div>

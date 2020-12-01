@@ -3,7 +3,7 @@
           <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light bg-color1 fixed-top  py-1 ">
               
-              <a class="navbar-brand order-lg-0 order-0" href="index.php"><img src="ikony\logo.png" width="30px" height="30px"></a>
+              <a class="navbar-brand order-lg-0 order-0" href="index.php"><img src="logo.png" width="30px" height="30px"></a>
               <button class="navbar-toggler  " type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -11,15 +11,11 @@
                 <ul class="navbar-nav mr-auto">
                   
                   <div class="nav justify-content-around ehh">
-                  <li class="nav-item active order-lg-1 order-2">
-                    <a class="nav-link " href="kanal.html"style="font-size:16px;  color:white; font-family: 'Lato', sans-serif;margin-left:2px">STREAM<span class="sr-only">(current)</span></a>
-                  </li>
+
                   <li class="nav-item order-lg-2 order-3">
                     <a class="nav-link" href="produkty.php" style="font-size:16px; color:white; font-family: 'Lato', sans-serif;margin-left:2px"> PRODUKTY</a>
                   </li>
-                  <li class="nav-item order-lg-3 order-4">
-                    <a class="nav-link" href="kategorie.html" style="font-size:16px; color:white; font-family: 'Lato', sans-serif;margin-left:2px">KATEGORIE</a>
-                  </div>
+       
                   </li>
                   
                   <!--SEARCH-->
