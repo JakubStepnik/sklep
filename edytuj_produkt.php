@@ -74,7 +74,7 @@ include_once "nav.php";
                             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                                 <h4 class="display-12 py-2 text-center " >Edytuj produkt</h4>
                                 wybierz nazwe produktu którego chcesz zmienić
-                                    <form action="dolacz/es.inc.php" class="justify-content-center" method="post">
+                                    <form action="dolacz/es.inc.php" class="justify-content-center" method="post" enctype="multipart/form-data">
                                     <div class="form-group">
                                     <select class="form-control" name="snazwa">
                                         <?php
@@ -119,6 +119,8 @@ include_once "nav.php";
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="cena" name="cena">
                                         </div>
+                                        <input type="file"  name="file">
+
                                         <button type="submit" class="btn btn-primary btn-lg" name="edycja_submit">Zapisz</button>
                                     </form>
                                     <?php 

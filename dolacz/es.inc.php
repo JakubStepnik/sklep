@@ -1,5 +1,5 @@
-
 <?php
+define('MB', 1048576);
 if(isset($_POST["edycja_submit"])){
     $snazwa = $_POST["snazwa"];
     $nnazwa = $_POST["nnazwa"];
@@ -46,15 +46,56 @@ if(isset($_POST["edycja_submit"])){
             
             $result=mysqli_query($conn,$sql);
         }
+    $file=$_FILES['file'];
+    print_r($file);
+    $FileName=$_FILES['file']['name'];
+
+    $FileTmpName=$_FILES['file']['tmp_name'];
+    $FileSize=$_FILES['file']['size'];
+    $FileError=$_FILES['file']['error'];
+    $FileType=$_FILES['file']['type'];
+    $fileExt = explode('.',$FileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg','jpeg','png');
+    if(in_array($fileActualExt,$allowed)){
+        if($FileError===0){
+            if($FileSize<5 *MB){
+                $sql_img="select * from stuff where name='".$snazwa."'";
+                $query_img=mysqli_query($conn,$sql_img);
+                $row_img=mysqli_fetch_assoc($query_img);
+                $old_src_img=$row_img["src_img"];
+                if(file_exists("../img_produkt/$old_src_img")){
+                    unlink("../img_produkt/$old_src_img");
+                }else {
+                    header("location: ../edytuj_produkt.php?error='imgnotfound");
+                    exit();
+                }
+                $fileNameNew=uniqid('',true).".".$fileActualExt;
+                $fileDestination= '../img_produkt/'.$fileNameNew;
+                move_uploaded_file($FileTmpName,$fileDestination);
+                $sql="UPDATE `stuff` SET `src_img`='".$fileNameNew."' where  `name`='".$snazwa."' ";
+                $result=mysqli_query($conn,$sql);
+            }else {
+                header("location: ../edytuj_produkt.php?error=toobig");
+                exit();
+            }
+        }else {
+            header("location: ../edytuj_produkt.php?error=wrongimg");
+            exit();
+        }
+    }else {
+        header("location: ../edytuj_produkt.php?error=wrongimgtype");
+        exit();
+    }
     if($result){
-        header("location: ../edycja_pracownika.php?error=none");
+        header("location: ../edytuj_produkt.php?error=none");
     }
     else {
-        header("location: ../edycja_pracownika.php?error=notchange");
+        header("location: ../edytuj_produkt.php?error=notchange");
     }
     mysqli_close($conn);
 }else {
-    header("location: ../edycja_pracownika.php?error=notprodukt");
+    header("location: ../edytuj_produkt.php?error=notprodukt");
 }
 }
    ?>
