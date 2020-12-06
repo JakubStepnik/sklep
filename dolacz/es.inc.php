@@ -67,7 +67,7 @@ if(isset($_POST["edycja_submit"])){
                 if(file_exists("../img_produkt/$old_src_img")){
                     unlink("../img_produkt/$old_src_img");
                 }else {
-                    header("location: ../edytuj_produkt.php?error='imgnotfound");
+                    header("location: ../edytuj_produkt.php?error=imgnotfound");
                     exit();
                 }
                 $fileNameNew=uniqid('',true).".".$fileActualExt;

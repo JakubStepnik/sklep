@@ -163,6 +163,7 @@
     overflow: hidden;
 }
 .lorem {
+  padding: 50px;
     margin-left: 14.65%;
     margin-right: 4.5%;
     color:white;
@@ -267,6 +268,11 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(79, 85, 128, 0.4z); 
+}
+.search-new{
+      position: absolute;
+      left: 50%;
+      transform: translatex(-50%);
 }
 /*LG*/
  @media only screen and (max-width: 991px) {

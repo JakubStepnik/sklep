@@ -28,9 +28,10 @@ hr {
 .image_shop {
     position: relative;
 }
+
 .buy {
     background-color: transparent;
-    color:rgba(161, 175, 255, 1);
+    color:rgb(178, 183, 216);
     border-radius: 0;
     border:1px solid #434444;
     width: 100%;

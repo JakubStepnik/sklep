@@ -75,8 +75,8 @@ $sql="Select *from stuff;";
 $result=mysqli_query($conn,$sql) or die("błędne zapytanie: $sql");
 while($row=mysqli_fetch_assoc($result)){
   echo "<div class='col-md-3 col-sm-6 product-grid'>
-  <div class='image_shop'>
-    <a href='siema'>
+  <div class='image_shop '>
+    <a href='produkt.php?name={$row["name"]}'>
       <img src='img_produkt/{$row["src_img"]}' class='w-100'>
       <div class='overlay'>
         <div class='detail'>Szczegóły</div>
