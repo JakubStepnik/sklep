@@ -3,7 +3,7 @@
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-                   <a class="navbar-brand order-lg-0 order-0" href="index.php"><img src="logo.png" width="30px" height="30px"></a>
+                   <a class="navbar-brand order-lg-0 order-0" href="index.php"><img src="style/logo.png" width="30px" height="30px"></a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="sklep.php" style="font-size: large;margin-left:5px;margin-right:5px;">Sklep</a>
@@ -17,12 +17,6 @@
       </ul>
   </div>
   <div class="mx-auto order-0 navbar-brand mx-auto">
-    <!--
-      <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-    -->
     <form class="form-inline my-2 my-lg-0  " style="margin-left:50px;width:100%; flex-flow: nowrap;">
       <input class="form-control mr-sm-2 " style="width:400px; height:33px; border:none; border-radius: 15px; background: #44475C;" type="search" placeholder="Search" aria-label="Search">
       <button class="button  bg-color1" type="submit">  <svg style="fill:white; border:15px;" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="15px" y="120px"
@@ -41,9 +35,12 @@
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 
       <div class="row navbar-nav ml-auto">
+        <a class="nav-link" href="koszyk.php">
+    <img class="nav-item " src="style/cart.png" width="30px" height="30px">
+    </a>
         <div class="col">
           <!-- <li class="nav-item dropdown"> -->
-<a class="nav-link dropdown-toggle  dropdown-toggle-split"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px; color:white; font-family: 'Lato', sans-serif;margin-right:-20px">
+          <a class="nav-link dropdown-toggle  dropdown-toggle-split"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:16px; color:white; font-family: 'Lato', sans-serif;margin-right:-20px">
 <img class="nav-item " src="user.png" width="30px" height="30px">
 </a>
 <?php 
