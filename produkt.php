@@ -58,25 +58,27 @@ include_once "nav.php";
                                     <?php
                                     echo " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit perspiciatis molestiae dolor magnam non cupiditate unde earum, debitis odio tenetur ipsam, facere, nihil magni commodi eos voluptate. Molestias, voluptatem ab.";
                                     if (isset($_POST["submit"])) {
-                                        if(isset($_SESSION["useruid"])){
-                                        $name = $_GET["name"];
-                                        $ilosc =$_POST["ilosc"];
-                                        $sql = "SELECT * FROM items where name='" . $name . "'";
-                                        $result = mysqli_query($conn, $sql);
-                                        $row = mysqli_fetch_assoc($result);
-                                        $sql_cart = "SELECT * FROM cart_view where name='" . $name . "'";
-                                        $result_cart = mysqli_query($conn, $sql_cart);
-                                        $row_cart= mysqli_fetch_assoc($result_cart);
-                                        $user=$_SESSION["userid"];
-                                        if($name==$row_cart["name"] && $user==$row_cart["usersId"]){
-                                                $sql="UPDATE cart SET ilosc = ilosc+'{$ilosc}' WHERE id_user= 1 && id_items='" . $row["idStuff"] . "'";
-                                                $result = mysqli_query($conn, $sql);
-                                        }else {
-                                            $sql = "INSERT INTO cart(id_items,ilosc,id_user,cena) VALUES ('" . $row["idStuff"] . "',$ilosc,$user,'" . $row["price"] . "')";
+                                        if (isset($_SESSION["useruid"])) {
+                                            $name = $_GET["name"];
+                                            $ilosc = $_POST["ilosc"];
+                                            $sql = "SELECT * FROM items where name='" . $name . "'";
                                             $result = mysqli_query($conn, $sql);
+                                            $row = mysqli_fetch_assoc($result);
+                                            $sql_cart = "SELECT * FROM cart_view where name='" . $name . "'";
+                                            $result_cart = mysqli_query($conn, $sql_cart);
+                                            $row_cart = mysqli_fetch_assoc($result_cart);
+                                            $user = $_SESSION["userid"];
+                                            if (isset($row_cart["name"]) && isset($row_cart["usersId"])) {
+                                                if ($name == $row_cart["name"] && $user == $row_cart["usersId"]) {
+                                                    $sql = "UPDATE cart SET ilosc = ilosc+'{$ilosc}' WHERE id_user='" . $user . "' && id_items='" . $row["idStuff"] . "'";
+                                                    $result = mysqli_query($conn, $sql);
+                                                }  
+                                            }else {
+                                                    $sql = "INSERT INTO cart(id_items,ilosc,id_user,cena) VALUES ('" . $row["idStuff"] . "',$ilosc,$user,'" . $row["price"] . "')";
+                                                    $result = mysqli_query($conn, $sql);
+                                                }
+                                            }
                                         }
-                                        }
-                                    }
                                     ?>
                                 </div>
                             </div>
