@@ -17,7 +17,7 @@
       </ul>
   </div>
   <div class="mx-auto order-0 navbar-brand mx-auto">
-    <form class="form-inline my-2 my-lg-0  " action="sklep.php" method="GET" style="margin-left:50px;width:100%; flex-flow: nowrap;">
+    <form class="form-inline my-2 my-lg-0  " action="index.php" method="GET" style="margin-left:50px;width:100%; flex-flow: nowrap;">
       <input class="form-control mr-sm-2 " name="query" style="color:white;width:400px; height:33px; border:none; border-radius: 15px; background: #44475C;" type="search" placeholder="Search" aria-label="Search">
       <button class="button  bg-color1" type="submit_search">  <svg style="fill:white; border:15px;" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="15px" y="120px"
         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
