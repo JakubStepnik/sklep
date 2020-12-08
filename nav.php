@@ -6,20 +6,20 @@
                    <a class="navbar-brand order-lg-0 order-0" href="index.php"><img src="style/logo.png" width="30px" height="30px"></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="sklep.php" style="font-size: large;margin-left:5px;margin-right:5px;">Sklep</a>
+              <a class="nav-link" href="kategorie.php" style="font-size: large;margin-left:5px;margin-right:5px">Kostki</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#" style="font-size: large;margin-left:5px;margin-right:5px">Kostki</a>
+              <a class="nav-link" href="kategorie.php" style="font-size: large;margin-left:5px;margin-right:5px">Książki</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#" style="font-size: large;margin-left:5px;margin-right:5px">Książki</a>
+              <a class="nav-link" href="kategorie.php" style="font-size: large;margin-left:5px;margin-right:5px;">sakiweki</a>
           </li>
       </ul>
   </div>
   <div class="mx-auto order-0 navbar-brand mx-auto">
-    <form class="form-inline my-2 my-lg-0  " style="margin-left:50px;width:100%; flex-flow: nowrap;">
-      <input class="form-control mr-sm-2 " style="width:400px; height:33px; border:none; border-radius: 15px; background: #44475C;" type="search" placeholder="Search" aria-label="Search">
-      <button class="button  bg-color1" type="submit">  <svg style="fill:white; border:15px;" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="15px" y="120px"
+    <form class="form-inline my-2 my-lg-0  " action="sklep.php" method="GET" style="margin-left:50px;width:100%; flex-flow: nowrap;">
+      <input class="form-control mr-sm-2 " name="query" style="color:white;width:400px; height:33px; border:none; border-radius: 15px; background: #44475C;" type="search" placeholder="Search" aria-label="Search">
+      <button class="button  bg-color1" type="submit_search">  <svg style="fill:white; border:15px;" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="15px" y="120px"
         viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
          <path  stroke-width="6" d="M508.875,493.792L353.089,338.005c32.358-35.927,52.245-83.296,52.245-135.339C405.333,90.917,314.417,0,202.667,0
            S0,90.917,0,202.667s90.917,202.667,202.667,202.667c52.043,0,99.411-19.887,135.339-52.245l155.786,155.786
